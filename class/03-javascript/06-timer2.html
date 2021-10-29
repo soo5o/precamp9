@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Timer</title>
+    <script>
+        let isActive = false
+            const changeNum=()=>{
+                            const token = String(Math.floor(Math.random() * 1000000)).padStart(6, "0")
+                document.getElementById("nums").innerText = token
+                if(isActive === false){
+                    isActive = true
+                let time = 180
+                setInterval(function(){
+                    if(time > 0){
+                        time-=1
+                        let min = String(Math.floor(time / 60)).padStart(2, "0")
+                        let sec = String(time % 60).padStart(2, "0")
+                        document.getElementById("count").innerText = min +":"+sec
+                    }
+                }, 1000)}
+            }
+        
+    </script>
+</head>
+<body>
+    <span id="nums">000000</span>
+    <button onclick="changeNum()">인증번호 전송</button><br />
+    <span id ="count">03:00</span>
+    <button>인증하기</button>
+</body>
+</html>

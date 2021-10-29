@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Function</title>
+    <script>
+        const changeNum=()=>{
+            const token = String(Math.floor(Math.random() * 1000000)).padStart(6, "0")
+            document.getElementById("nums").innerText = token
+        }
+    </script>
+</head>
+<body>
+    <span id="nums">000000</span>
+    <button onclick="changeNum()">인증번호 전송</button><br />
+    <span id ="count">3:00</span>
+    <button>인증하기</button>
+</body>
+</html>

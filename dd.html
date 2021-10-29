@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>dd</title>
+    <link href="finalSignup.css" rel="stylesheet"/>
+    <script>
+        function qqq(){
+            const email = document.getElementById("email").value
+            const pass1 = document.getElementById("pass1").value
+            const pass2 = document.getElementById("pass2").value
+            if(email !== "" && pass1 !== "" && pass2 !== ""){
+                document.getElementById("myButton").setAttribute('style','background-color: yellow;')
+                document.getElementById("myButton").removeAttribute('disabled')
+            } else{
+                document.getElementById("myButton").setAttribute('style','background-color: none;')
+                document.getElementById("myButton").setAttribute('disabled','true')
+
+            }
+        }
+        function ccc(){ //배열비교
+            const pass1 = document.getElementById("pass1").value
+            const pass2 = document.getElementById("pass2").value
+            let j = 0
+            for(let i =0 ;i < pass1.length; i+= 1){
+                if(pass1[i] !== pass2[i] || pass1.length !== pass2.length){
+                    j+=1
+                }
+            }
+            if(j===0 && pass) alert("회원가입이 됐습니다.")
+            else alert("비밀번호를 다시 입력해주세요.")
+        }
+    </script>
+</head>
+<body>
+    <input id="email" type="text" placeholder="이메일을 입력해 주세요." oninput="qqq()"/><br />
+    <input id="pass1" type="password" placeholder="비밀번호를 입력해 주세요." oninput="qqq()"/><br />
+    <input id="pass2" type="password" placeholder="비밀번호를 다시 입력해 주세요." oninput="qqq()"/><br />
+    <button id="myButton" onclick="ccc()" disabled>회원가입</button>
+</body>
+</html>

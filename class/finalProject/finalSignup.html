@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>dd</title>
+    <link href="finalSignup.css" rel="stylesheet"/>
+    <script>
+        function qqq(){
+            const email = document.getElementById("email").value
+            const pass1 = document.getElementById("pass1").value
+            const pass2 = document.getElementById("pass2").value
+            if(email !== "" && pass1 !== "" && pass2 !== ""){
+                document.getElementById("myButton").setAttribute('style','background-color: yellow;')
+                document.getElementById("myButton").removeAttribute('disabled')
+            } else{
+                document.getElementById("myButton").setAttribute('style','background-color: none;')
+                document.getElementById("myButton").setAttribute('disabled','true')
+
+            }
+        }
+        // function pass(){ 
+        //     const pass1 = document.getElementById("pass1").value
+        //     const pass2 = document.getElementById("pass2").value
+        //     let j = 0
+        //     for(let i =0 ;i < pass1.length; i+= 1){
+        //         if(pass1[i] !== pass2[i] || pass1.length !== pass2.length){
+        //             j+=1
+        //         }
+        //     }
+        //     if(j===0) alert("코드캠프 가입을 축하합니다.")
+        //     else alert("비밀번호를 다시 입력해주세요.")
+        // }
+        function changeP1(){
+            const phone = document.getElementById("phone1").value
+            if(phone.length === 3){
+                document.getElementById("phone2").focus()
+            }
+        }
+        function changeP2(){
+            const phone = document.getElementById("phone2").value
+            if(phone.length === 4){
+                document.getElementById("phone3").focus()
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class = "wrapper">
+        <input id="email" type="text" placeholder="이메일을 입력해 주세요." oninput="qqq()"/><br />
+        <div></div>
+        <input type="text" placeholder="이름을 입력해주세요."/><br>
+        <div></div>
+        <input id="pass1" type="password" placeholder="비밀번호를 입력해 주세요." oninput="qqq()"/><br />
+        <div></div>
+        <input id="pass2" type="password" placeholder="비밀번호를 다시 입력해 주세요." oninput="qqq()"/><br />
+        <div></div>
+        <div>
+            <input id = "phone1" type ="text" size = "3" maxlength="3" oninput="changeP1()"/> - 
+            <input id = "phone2" type ="text" size = "4" maxlength="4" oninput="changeP2()"/> - 
+            <input id = "phone3" type ="text" size = "4" maxlength="4"/><br>
+        </div> 
+        <!-- 숫자인지? -->
+        <input type="radio" name="gender"/>여성<input type="radio" name="gender"/>남성<br>
+        <div></div>
+        <hr>
+        <button id="myButton" onclick="pass()" disabled>가입하기</button>
+    </div>    
+</body>
+</html>

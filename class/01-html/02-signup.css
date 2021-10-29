@@ -1,0 +1,10 @@
+input{
+    background-color: rgb(240, 240, 196);
+}
+/* *은 전체 선택자 */
+.aa{
+    background-color: rgb(167, 221, 243);
+}
+#bb{
+    background-color: rgb(241, 222, 193);
+}

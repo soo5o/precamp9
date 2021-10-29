@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>cyworld</title>
+    <link href="styles/index.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <script>
+        function toHome(){
+            document.getElementById("main").setAttribute('src',"home.html")
+            document.getElementById("toHome").style = "color: black ; background-color: white"
+            document.getElementById("toJuke").style = "color: white ; background-color: #298EB5"
+            document.getElementById("toGame").style = "color: white ; background-color: #298EB5"
+        }
+        function toGame(){
+            document.getElementById("main").setAttribute('src','game.html')
+            document.getElementById("toGame").style = "color: black ; background-color: white"
+            document.getElementById("toHome").style = "color: white ; background-color: #298EB5"
+            document.getElementById("toJuke").style = "color: white ; background-color: #298EB5"
+        }
+        function toJuke(){
+            document.getElementById("main").setAttribute('src','music.html')
+            document.getElementById("toJuke").style = "color: black ; background-color: white"
+            document.getElementById("toHome").style = "color: white ; background-color: #298EB5"
+            document.getElementById("toGame").style = "color: white ; background-color: #298EB5"
+        }
+    </script>
+</head>
+<body>
+    <div class="background">
+        <div class="outerbox">
+            <div class="wrapper">
+                <div class="wrapper__left">
+                    <div class="wrapper__left__header">
+                        <div class ="today">
+                            TODAY <span class="zero">0</span> | TOTAL <span class="count">12345</span> 
+                        </div>
+                    </div>
+                    <div class="wrapper__left__body">
+                        <div class="header">
+                            <div class="headerGrey">
+                            </div>
+                            <div class="line"></div>
+                            <div class="profileWrapper">
+                                <div class="profile">
+                                    <i class="far fa-meh-blank"></i> 이름
+                                </div>
+                                <!-- class는 띄어쓰기로 여러개 선언가능 -->
+                                <div class="profile">
+                                    <i class="fas fa-phone-alt"></i> Phone
+                                </div>
+                                <div class="profile">
+                                    <i class="far fa-envelope"></i> E-mail
+                                </div>
+                                <div class="profile">
+                                    <i class="fab fa-instagram"></i> 인스타그램
+                                </div>
+                            </div>    
+                        </div>    
+                        <div class="footer">
+                            <div class="feelWrapper">
+                                <div class="feel"> 오늘의 기분</div>
+                                <select class="feelSelect">
+                                    <option disabled selected>오늘의 기분</option>
+                                    <!-- 종속태그로 둘이 같이 쓰임, ="true" 생략가능 -->
+                                    <option>기쁨😁</option>
+                                    <option>행복🤩</option>
+                                    <option>신남😚</option>
+                                    <option>슬픔😥</option>
+                                    <option>피곤함😪</option>
+                                    <option>분노😡</option>                                    
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrapper__right">
+                    <div class="wrapper__right__header">
+                        <div class="wrapper__right__title">사이좋은 사람들, 싸이월드</div>
+                        <div class="wrapper__right__setting">사생활보호설정 <i class="fas fa-caret-right bbbb"></i></div>
+                    </div>
+                    <div class="wrapper__right__body">
+                        <!-- <iframe src="home.html"></iframe> -->
+                        <iframe id = "main" src="music.html"></iframe>
+                    </div>
+                </div>
+                <div class = "navigation">
+                    <div id="toHome" class = "navigation_item" onclick="toHome()">홈</div>
+                    <div id="toGame" class = "navigation_item" onclick="toGame()">게임</div>
+                    <div id="toJuke" class = "navigation_item" onclick="toJuke()">주크박스</div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
